@@ -245,7 +245,7 @@ def get_default_order_payload(order: "Order", redirect_url: str = ""):
     order_payload.update(
         {
             "id": to_global_id_or_none(order),
-            "number": to_global_id_or_none(order),
+            "number": order.id,
             "channel_slug": order.channel.slug,
             "created": str(order.created),
             "shipping_price_net_amount": order.shipping_price_net_amount,
